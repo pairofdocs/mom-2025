@@ -6,7 +6,7 @@
 
 body {
     font-family: 'Arial', sans-serif;
-    background: linear-gradient(to bottom, #f8e1eb, #f5b6d0);
+    background: linear-gradient(to bottom, #90b056, #90b056);
     height: 100vh;
     display: flex;
     flex-direction: column;
@@ -35,7 +35,7 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    object-fit: cover;
+    object-fit: none;
 }
 
 .container {
