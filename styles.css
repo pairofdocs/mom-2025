@@ -1,0 +1,102 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to bottom, #f8e1eb, #f5b6d0);
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+}
+
+.video-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+    overflow: hidden;
+}
+
+.video-background video {
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+}
+
+.container {
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    padding: 50px;
+    margin: 30px 30px 0 30px;
+    margin-top: 50px;
+    background-color: rgba(255, 255, 255, 0.4);
+    border-radius: 20px;
+    backdrop-filter: blur(4px);
+}
+
+.glowing-text {
+    font-size: 4rem;
+    color: #ff3399;
+    text-shadow: 0 0 10px #ff66b2, 
+                 0 0 20px #ff99cc, 
+                 0 0 30px #ffcce6;
+    animation: pulse 2s infinite ease-in-out;
+    margin: 20px;
+}
+
+@keyframes pulse {
+    0% {
+        text-shadow: 0 0 10px #ff66b2, 
+                     0 0 20px #ff99cc, 
+                     0 0 30px #ffcce6;
+    }
+    50% {
+        text-shadow: 0 0 15px #ff66b2, 
+                     0 0 25px #ff99cc, 
+                     0 0 35px #ffcce6;
+        transform: scale(1.05);
+    }
+    100% {
+        text-shadow: 0 0 10px #ff66b2, 
+                     0 0 20px #ff99cc, 
+                     0 0 30px #ffcce6;
+    }
+}
+
+.hearts {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+    z-index: -1;
+}
+
+@media (max-width: 768px) {
+    .glowing-text {
+        font-size: 2.5rem;
+    }
+    
+    .container {
+        padding: 30px;
+        margin: 15px 15px 0 15px;
+        margin-top: 30px;
+    }
+} 
