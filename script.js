@@ -36,7 +36,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
 function createHeart(container) {
     const heart = document.createElement('div');
-    heart.innerHTML = '❤';
+    
+    // Heart SVG markup
+    const heartColor = `rgba(255, 51, 153, ${Math.random() * 0.3 + 0.7})`;
+    heart.innerHTML = `
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="100%" height="100%" fill="${heartColor}">
+            <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+        </svg>
+    `;
     heart.className = 'heart';
     
     // Random properties for each heart
@@ -44,15 +51,14 @@ function createHeart(container) {
     const left = Math.random() * 100;
     const animDuration = Math.random() * 10 + 10;
     const delay = Math.random() * 5;
-    const opacity = Math.random() * 0.3 + 0.7; // Higher opacity
     
     // Apply styles
     heart.style.cssText = `
         position: absolute;
         bottom: -20px;
         left: ${left}%;
-        font-size: ${size}px;
-        color: rgba(255, 51, 153, ${opacity});
+        width: ${size}px;
+        height: ${size}px;
         animation: float ${animDuration}s linear forwards;
         animation-delay: ${delay}s;
         z-index: -1;
@@ -107,6 +113,12 @@ style.innerHTML = `
 
 .play-button:hover {
     background-color: rgba(255, 51, 153, 1);
+}
+
+.heart svg {
+    display: block;
+    width: 100%;
+    height: 100%;
 }
 `;
 document.head.appendChild(style); 
